@@ -47,6 +47,8 @@ The system operates through a sequential 5-stage pipeline, transforming raw tabu
 |                                    index.html                                     |
 +-----------------------------------------+-----------------------------------------+
 
+![App Screenshot](representation.png)
+
 Code Base & File Mapping
 Directory / File Type Primary Purpose Key Output /Dependency
 Bisoprolol_icsr_sample_1068rows.xlsx  DatasetPrimary raw ICSR safety data file  Input for analytics.py  

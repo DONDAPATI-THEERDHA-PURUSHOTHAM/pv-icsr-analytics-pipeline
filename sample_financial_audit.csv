@@ -1,0 +1,6 @@
+TransactionID,Department,Amount,Status,RiskCategory
+TXN_101,Procurement,14500.00,Approved,Low
+TXN_102,Engineering,89000.50,Pending,Medium
+TXN_103,Marketing,3400.00,Approved,Low
+TXN_104,Operations,120000.00,Flagged,High
+TXN_105,Procurement,56000.00,Approved,Medium

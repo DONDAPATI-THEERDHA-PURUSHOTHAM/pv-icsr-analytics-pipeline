@@ -1,0 +1,12 @@
+Enterprise Pharmacovigilance and Safety Governance Policy
+Document Reference: POL-2026-PV-001
+Effective Date: January 1, 2026
+
+1. Purpose and Scope
+This policy establishes mandatory procedures for Individual Case Safety Report (ICSR) processing, 15-day expedited reporting to regulatory authorities (FDA 21 CFR 314.80), and periodic safety review.
+
+2. Risk Classification and Signal Detection
+All post-marketing adverse experience reports must undergo statistical disproportionality evaluation using Proportional Reporting Ratios (PRR). Any signal with a PRR score exceeding 2.0 and minimum 3 case occurrences requires escalation to the Safety Committee.
+
+3. Cryptographic Audit Controls
+In compliance with 21 CFR Part 11, all safety summary reports and generated payload metrics must be cryptographically hashed using SHA-256 prior to final authorization.

@@ -1,0 +1,27 @@
+Architecture DiagramCode snippetflowchart TD
+    subgraph Data Layer
+        A[Heterogeneous Raw Data Inputs\nCSVs / Databases / Unstructured Docs / APIs] -->|Raw Data Ingestion| B[analytics_engine.py]
+    end
+
+    subgraph Deterministic Analytics Engine
+        B -->|Deduplicate & Normalize| C[Canonical Data Records]
+        C -->|Aggregate Metrics & KPIs| D[Quantitative Analytics Module]
+        C -->|Extract Categorical Distributions| E[Demographic & Entity Aggregator]
+        C -->|Apply Rules & Compliance Checks| F[Business Logic & Regulatory Engine]
+        D & E & F -->|Export Standardized Artifact| G[(metrics_payload.json)]
+    end
+
+    subgraph Scoped Context & Generator Engine
+        G -->|Section-Scoped Filtering| H[context_assembler.py\nPrompt & Context Builder]
+        H -->|Scoped Context Packet per Section| I[report_generator.py\nAI Narrative Engine]
+        I -->|Inject Required Mandates/Disclaimers| J[Guardrails & Mandatory Disclaimers]
+        J -->|Render Grounded Artifact| K[report_draft.md / PDF / HTML]
+    end
+
+    subgraph Human Governance & Audit Layer
+        K --> L[review_gate.py\nHuman Control CLI / TUI / UI]
+        G --> L
+        L -->|Capture Notes & Section Flags| M[(review_status.json)]
+        L -->|Cryptographic Hash & Sign-off| N[Final Certified Enterprise Asset]
+    end
+Core Component Modules1. Data Ingestion & Deterministic Analytics Engine (analytics_engine.py)Data Ingestion & Standardization: Ingests tabular data, JSON payloads, or unstructured documents from databases, local files, or external APIs.Deduplication & Entity Resolution: Cleans raw records, standardizes identifiers, and establishes canonical case-level vs. occurrence-level counts.Mathematical & Categorical Aggregations: Computes 100% of numerical calculations, statistical summaries, date ranges, distributions, and compliance tabulations.Output State: Produces a validated, immutable metrics_payload.json artifact acting as the absolute single source of truth (SSOT).2. Dynamic Context Packet Assembler (context_assembler.py)Token Optimization & Isolation: Filters metrics_payload.json to isolate only section-relevant parameters, eliminating token waste and reducing attention dispersion in the LLM.Prompt Registry & Grounding: Pairs scoped context packets with domain-specific system prompts that explicitly restrict the LLM from introducing ungrounded facts.Dynamic Data Injection: Dynamically formats quantitative tables, structured lists, and categorical variables into standard markdown or text formats prior to LLM submission.3. Grounded AI Narrative Generator (report_generator.py)Narrative Synthesis: Converts structured, scoped context packets into fluent, domain-appropriate professional prose.Disclaimer & Guardrail Injection: Automatically injects mandatory regulatory, legal, or enterprise disclaimers (e.g., missing metadata disclaimers, scope constraints, risk notices).Draft Generation: Assembles individual generated sections into a cohesive report artifact (report_draft.md, PDF, or HTML).4. Human Control & Governance Approval Gate (review_gate.py)Interactive Review Interface: Provides domain experts with tools to inspect raw metrics, preview generated sections, and flag specific items with feedback.21 CFR Part 11 / Regulatory Compliance: Generates SHA-256 cryptographic hashes of generated artifacts and source metrics to prevent post-approval tampering.Audit Logging: Records reviewer signatures, timestamps, role metadata, and section feedback in an immutable state file (review_status.json).Deterministic vs. AI vs. Human Responsibility MatrixOperational TaskOwnership LayerImplementation PatternTechnical JustificationData Deduplication & CleaningDeterministic EnginePandas / Polars / SQL transformationsLLMs cannot guarantee 100% precision in counting or deduplicating raw records.Numerical & Statistical AnalysisDeterministic EnginePython NumPy / Analytics scriptsEliminates LLM arithmetic hallucination risks entirely.Context Isolation & PromptingDeterministic EngineScoped JSON extraction (context_assembler.py)Restricts LLM visibility strictly to necessary data, maximizing factual adherence.Prose & Synthesis DraftingAI / LLM EngineGrounded LLM API generation (report_generator.py)Converts quantitative metrics into domain-appropriate narrative text.Compliance Guardrail EnforcerAI / LLM EngineMandatory system instructions & disclaimersEnsures required regulatory or enterprise notices are never omitted.Audit Trail & Cryptographic Sign-offGovernance LayerSHA-256 hashing & TUI/GUI (review_gate.py)Meets legal, regulatory, and institutional compliance sign-off requirements.Domain Adaptability GuideDomainRaw Data Input (analytics_engine.py)SSOT Payload (metrics_payload.json)Dynamic Output Artifact (report_draft.md)Pharmacovigilance (PADER/PSUR)ICSR Safety Database / FAERS exportsCase counts, MedDRA PT frequencies, demographicsFDA PADER Periodic Safety SummaryFinancial Regulatory AuditTransaction ledgers, GL exportsPortfolio exposure, risk KPIs, variance calculationsSEC/FINRA Compliance Risk ReportInsurance Claims AnalyticsAdjuster notes, claim payout tablesLoss ratios, claim frequency by category, reservesQuarterly Loss Adjustment & Underwriting SummaryClinical Trial AnalyticsEDC systems, CDISC SDTM/ADaM datasetsPatient dropout rates, AE tables, efficacy signalsClinical Study Report (CSR) Section 10-12Cybersecurity Incident ReviewSIEM logs, firewall events, ticket dataMean time to detect (MTTD), threat vectors, blast radiusBoard-level Post-Mortem & SOC Audit Report

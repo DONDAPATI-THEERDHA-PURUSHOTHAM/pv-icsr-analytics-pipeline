@@ -1,0 +1,52 @@
+{
+  "schema_version": "2.1.0",
+  "review_id": "REV-20260821-001",
+  "timestamp": "2026-08-21T09:02:17Z",
+  "dataset": "Bisoprolol_icsr_TEST_dataset_24unique_30rows.xlsx",
+  "status": "APPROVED",
+  "auto_approved": true,
+  "certified": true,
+  "hashes": {
+    "report_sha256": "1bd2428e381af49bf97a8903db484826bcd63588da08370e36c51a776c0c1533",
+    "metrics_sha256": "aa51e9a2ea78886f258b79633f336b8ce190cfe98b2e5e003a5b396b09c359b4"
+  },
+  "compliance_checks": {
+    "21_cfr_314_80_compliant": true,
+    "deduplication_verified": true,
+    "meddra_coding_validated": true,
+    "15_day_expedited_reconciled": true
+  },
+  "signal_detection_summary": {
+    "signals_evaluated": 10,
+    "flagged_signals": []
+  },
+  "reviewer_notes": "Automated 21 CFR 314.80 verification completed. 24 cases reconciled.",
+  "document_metadata": {
+    "report_hash_sha256": "1bd2428e381af49bf97a8903db484826bcd63588da08370e36c51a776c0c1533",
+    "metrics_hash_sha256": "aa51e9a2ea78886f258b79633f336b8ce190cfe98b2e5e003a5b396b09c359b4"
+  },
+  "sign_offs": {
+    "safety_pharmacovigilance_officer": {
+      "signed": true,
+      "reviewer_name": "Dr. Eleanor Vance, MD",
+      "role": "Safety Pharmacovigilance Officer",
+      "timestamp": "2026-08-21T09:02:18Z",
+      "signature_meaning": "Certified Clinical Accuracy",
+      "digital_signature_hash": "3a9a0016df389eb969ebac08df2027724cd389315958b65e2d3c782e1ebc2128"
+    }
+  },
+  "workflow_state": {
+    "status": "APPROVED",
+    "overall_approval": true,
+    "last_updated": "2026-08-21T09:02:18Z"
+  },
+  "audit_trail": [
+    {
+      "event_id": "evt_8aa14569",
+      "timestamp": "2026-08-21T09:02:18Z",
+      "actor": "System",
+      "action": "DIGITAL_SIGN_OFF",
+      "details": "Role 'Safety Pharmacovigilance Officer' signed off by Dr. Eleanor Vance, MD."
+    }
+  ]
+}

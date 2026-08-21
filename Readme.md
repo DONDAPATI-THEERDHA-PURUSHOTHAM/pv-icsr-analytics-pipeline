@@ -118,7 +118,10 @@ Open index.html directly in any web browser, or run a local web server:
 ```
 python -m http.server 8000
 ```
-Access the dashboard at http://localhost:8000.  
+Access the dashboard at ```http://localhost:8000.``` 
+
+The project is live:
+Live link: https://dondapati-theerdha-purushotham.github.io/pv-icsr-analytics-pipeline/
 
 # **<u>Production Enhancements & Roadmap:</u>**
 Input Validation: Implement Pydantic schema verification on input .xlsx files to catch missing columns prior to execution.

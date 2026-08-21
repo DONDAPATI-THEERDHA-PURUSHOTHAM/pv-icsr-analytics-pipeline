@@ -47,7 +47,7 @@ The system operates through a sequential 5-stage pipeline, transforming raw tabu
 |                                    index.html                                     |
 +-----------------------------------------+-----------------------------------------+
 
-![App Screenshot](representation.png)
+![App Screenshot](/representation.png)
 
 Code Base & File Mapping
 Directory / File Type Primary Purpose Key Output /Dependency

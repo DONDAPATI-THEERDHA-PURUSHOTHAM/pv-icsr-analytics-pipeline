@@ -25,7 +25,8 @@ graph TD
     S4A --> S5
     S4B --> S5
     S5 --> S6
-    
+
+```
 +-----------------------------------------------------------------------------------+
 |                            STAGE 1: DATA INGESTION                                |
 |  Bisoprolol_icsr_sample_1068rows.xlsx  |  Bisoprolol_icsr_TEST_dataset_30rows.xlsx |
@@ -64,7 +65,7 @@ graph TD
 |                        STAGE 6: FRONTEND DASHBOARD DISPLAY                        |
 |                                    index.html                                     |
 +-----------------------------------------+-----------------------------------------+
-
+```
 
 ![Representation](Representaion.png)
 

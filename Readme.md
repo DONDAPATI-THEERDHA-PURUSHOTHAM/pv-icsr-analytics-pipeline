@@ -8,7 +8,8 @@ Processing: Statistical disproportionality analysis, prompt context assembly, an
 Output: Metric evaluations, persistent JSON review states, compiled Markdown clinical reports, and an interactive web dashboard.  
 Impact: Reduces manual case processing time by up to 80% while maintaining audit traceability and regulatory compliance. 
 Architecture & Data Flow
-The system operates through a sequential 5-stage pipeline, transforming raw tabular data into structured clinical insights and frontend visual dashboards.  +-----------------------------------------------------------------------------------+
+The system operates through a sequential 5-stage pipeline, transforming raw tabular data into structured clinical insights and frontend visual dashboards.  
++-----------------------------------------------------------------------------------+
 |                            STAGE 1: DATA INGESTION                                |
 |  Bisoprolol_icsr_sample_1068rows.xlsx  |  Bisoprolol_icsr_TEST_dataset_30rows.xlsx |
 +-----------------------------------------+-----------------------------------------+
@@ -46,6 +47,26 @@ The system operates through a sequential 5-stage pipeline, transforming raw tabu
 |                        STAGE 6: FRONTEND DASHBOARD DISPLAY                        |
 |                                    index.html                                     |
 +-----------------------------------------+-----------------------------------------+
+
+```mermaid
+graph TD
+    S1["<b>STAGE 1: DATA INGESTION</b><br/>Bisoprolol_icsr_sample_1068rows.xlsx<br/>Bisoprolol_icsr_TEST_dataset_30rows.xlsx"]
+    S2["<b>STAGE 2: CLINICAL DATA ANALYTICS</b><br/>src/analytics.py"]
+    S3["<b>STAGE 3: PROMPT FORMULATION & AI GENERATION</b><br/>src/prompts.py ➔ src/generator.py"]
+    
+    S4A["<b>STAGE 4A: METRICS & QUALITY EVAL</b><br/>src/metrics.py ➔ metrics.json"]
+    S4B["<b>STAGE 4B: CLINICAL REPORT COMPILATION</b><br/>src/report_generator.py ➔ report.md"]
+    
+    S5["<b>STAGE 5: HUMAN REVIEW WORKFLOW & STATE MANAGEMENT</b><br/>src/review.py & src/review_status_manager.py ➔ review_status.json"]
+    S6["<b>STAGE 6: FRONTEND DASHBOARD DISPLAY</b><br/>index.html"]
+
+    S1 --> S2
+    S2 --> S3
+    S3 --> S4A
+    S3 --> S4B
+    S4A --> S5
+    S4B --> S5
+    S5 --> S6
 
 ![Representation](Representaion.png)
 

@@ -1,15 +1,14 @@
 # **<u>Pharmacovigilance ICSR Analytics & Narrative Generation Pipeline:</u>**
 An automated data processing and artificial intelligence pipeline designed to ingest, analyze, evaluate, and synthesize Individual Case Safety Reports (ICSRs) for clinical safety surveillance. This platform automates the extraction of adverse event signals from tabular medical datasets, generates regulatory-compliant safety narratives using LLMs, and manages human-in-the-loop clinical review states.
   
-### **<u>Small Heading</u>**
 # **<u>Executive Overview:</u>**
 Processing high-volume Individual Case Safety Reports (ICSRs) manually presents significant operational bottlenecks for drug safety teams. This project addresses the challenge by coupling Python-based clinical data analytics with template-driven Large Language Model (LLM) narrative generation. 
-## **Input:** Raw Excel ICSR datasets containing drug safety, demographic, and adverse event fields.  
-## **<u>Processing:</u>** Statistical disproportionality analysis, prompt context assembly, and automated narrative drafting.  
-## **<u>Output:</u>** Metric evaluations, persistent JSON review states, compiled Markdown clinical reports, and an interactive web dashboard.  
-## **<u>Impact:</u>** Reduces manual case processing time by up to 80% while maintaining audit traceability and regulatory compliance. 
+Input: Raw Excel ICSR datasets containing drug safety, demographic, and adverse event fields.  
+Processing: Statistical disproportionality analysis, prompt context assembly, and automated narrative drafting.  
+Output: Metric evaluations, persistent JSON review states, compiled Markdown clinical reports, and an interactive web dashboard.  
+Impact: Reduces manual case processing time by up to 80% while maintaining audit traceability and regulatory compliance. 
 
-# **<u>Architecture & Data Flow</u>**
+# **<u>Architecture & Data Flow:</u>**
 The system operates through a sequential 5-stage pipeline, transforming raw tabular data into structured clinical insights and frontend visual dashboards.  
 ```
 +-----------------------------------------------------------------------------------+
@@ -52,7 +51,7 @@ The system operates through a sequential 5-stage pipeline, transforming raw tabu
 +-----------------------------------------+-----------------------------------------+
 ```
 
-# **<u>Code Base & File Mapping</u>**
+# **<u>Code Base & File Mapping:</u>**
 ```
 Directory / File Type Primary Purpose Key Output /Dependency
 Bisoprolol_icsr_sample_1068rows.xlsx  DatasetPrimary raw ICSR safety data file  Input for analytics.py  
@@ -66,20 +65,20 @@ src/review.py  PythonHuman review triage and logic execution  Action status flag
 src/review_status_manager.py  PythonState manager for case approvals/flags  review_status.json  
 index.html  FrontendSingle-page web dashboard for end users  Interactive browser UI
 ```
-# **<u>Represetation</u>**
+# **<u>Represetation:</u>**
 ![Representation](Representaion.png)
 
 # **<u>Operational Process:</u>**
-## **<u>Ingestion:</u>** Reads raw .xlsx safety reports containing clinical parameters, adverse drug reactions (ADRs), and patient demographics.
-## **<u>Preprocessing:</u>** Standardizes clinical terminology and validates required data fields.  
-## **<u>Analytics:</u>** analytics.py aggregates adverse event occurrence rates and computes disproportionality metrics.  
-## **<u>Prompt Construction:</u>** prompts.py injects extracted analytics into structured system templates to constrain LLM outputs.  
-## **<u>Generation:</u>** generator.py invokes language models to synthesize standardized clinical safety summaries.  
-## **<u>Metric Evaluation:</u>** metrics.py evaluates hallucination rates, formatting compliance, and outputs results to metrics.json.  
-## **<u>Report Compilation:</u>** report_generator.py renders analytics, metrics, and narrative proforma into report_output.md.  
-## **<u>Review Triage:</u>** review.py flags ambiguous or low-confidence safety reports for human review.  
-## **<u>State Persistence:</u>** review_status_manager.py tracks review decisions (PENDING, APPROVED, FLAGGED) in review_status.json.  
-## **<u>Visualization:</u>** index.html reads generated reports and JSON outputs to display an interactive web interface.
+Ingestion: Reads raw .xlsx safety reports containing clinical parameters, adverse drug reactions (ADRs), and patient demographics.
+Preprocessing: Standardizes clinical terminology and validates required data fields.  
+Analytics: analytics.py aggregates adverse event occurrence rates and computes disproportionality metrics.  
+Prompt Construction: prompts.py injects extracted analytics into structured system templates to constrain LLM outputs.  
+Generation: generator.py invokes language models to synthesize standardized clinical safety summaries.  
+Metric Evaluation: metrics.py evaluates hallucination rates, formatting compliance, and outputs results to metrics.json.  
+Report Compilation: report_generator.py renders analytics, metrics, and narrative proforma into report_output.md.  
+Review Triage: review.py flags ambiguous or low-confidence safety reports for human review.  
+State Persistence: review_status_manager.py tracks review decisions (PENDING, APPROVED, FLAGGED) in review_status.json.  
+Visualization: index.html reads generated reports and JSON outputs to display an interactive web interface.
 
 # **<u>Technology Stack:</u>**
 Programming Language: Python 3.8+  
@@ -121,8 +120,13 @@ python -m http.server 8000
 ```
 Access the dashboard at http://localhost:8000.  
 
-# **<u>Production Enhancements & Roadmap</u>**
-## **<u>Input Validation:</u>** Implement Pydantic schema verification on input .xlsx files to catch missing columns prior to execution.
-## **<u>Database Migration:</u>** Upgrade review_status_manager.py from flat JSON storage (review_status.json) to an ACID-compliant SQLite or PostgreSQL database to enable multi-user concurrent review.  
-## **<u>Asynchronous API Engine:</u>** Refactor generator.py to use asynchronous API calls (asyncio / Celery) to scale batch processing across enterprise volumes.  
-## **<u>Security & Anonymization:</u>** Add an automated Patient Health Information (PHI) de-identification layer prior to external LLM API transmission.
+# **<u>Production Enhancements & Roadmap:</u>**
+Input Validation: Implement Pydantic schema verification on input .xlsx files to catch missing columns prior to execution.
+Database Migration: Upgrade review_status_manager.py from flat JSON storage (review_status.json) to an ACID-compliant SQLite or PostgreSQL database to enable multi-user concurrent review.  
+Asynchronous API Engine: Refactor generator.py to use asynchronous API calls (asyncio / Celery) to scale batch processing across enterprise volumes.  
+Security & Anonymization: Add an automated Patient Health Information (PHI) de-identification layer prior to external LLM API transmission.
+
+# **Dondapati Theerdha Purushotham** — *Data Pipeline & Clinical Analytics Developer*
+> 🎓 **Background:** Clinical Data Science & Regulatory Automation  
+> 📜 **GitHub:** [github.com/DONDAPATI-THEERDHA-PURUSHOTHAM](https://github.com/DONDAPATI-THEERDHA-PURUSHOTHAM)  
+> 🔬 **Domain Focus:** Adverse Event Signal Detection & ICSR Analytics  

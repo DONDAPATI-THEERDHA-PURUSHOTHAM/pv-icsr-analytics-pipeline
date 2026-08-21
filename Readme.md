@@ -4,7 +4,7 @@ An automated data processing and artificial intelligence pipeline designed to in
 ### **<u>Small Heading</u>**
 # **<u>Executive Overview:</u>**
 Processing high-volume Individual Case Safety Reports (ICSRs) manually presents significant operational bottlenecks for drug safety teams. This project addresses the challenge by coupling Python-based clinical data analytics with template-driven Large Language Model (LLM) narrative generation. 
-## **<u>Input:</u>** Raw Excel ICSR datasets containing drug safety, demographic, and adverse event fields.  
+## **Input:** Raw Excel ICSR datasets containing drug safety, demographic, and adverse event fields.  
 ## **<u>Processing:</u>** Statistical disproportionality analysis, prompt context assembly, and automated narrative drafting.  
 ## **<u>Output:</u>** Metric evaluations, persistent JSON review states, compiled Markdown clinical reports, and an interactive web dashboard.  
 ## **<u>Impact:</u>** Reduces manual case processing time by up to 80% while maintaining audit traceability and regulatory compliance. 
